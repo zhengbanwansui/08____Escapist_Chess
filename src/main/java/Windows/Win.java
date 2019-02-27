@@ -96,6 +96,7 @@ public class Win extends JFrame implements ActionListener {
             for(int j=0; j<6; j++){
                 AutoBGJpanel auto = new AutoBGJpanel(unitUp.get(i).get(j).name);
                 auto.setBounds(i*70, j*70, 60, 60);
+                auto.setVisible(unitUp.get(i).get(j).visible);
                 map.add(auto);
                 jpUp.get(i).add(auto);
             }
@@ -108,6 +109,7 @@ public class Win extends JFrame implements ActionListener {
             for(int j=0; j<6; j++){
                 AutoBGJpanel auto = new AutoBGJpanel(unitDown.get(i).get(j).name);
                 auto.setBounds(10+i*70, 10+j*70, 60, 60);
+                auto.setVisible(unitDown.get(i).get(j).visible);
                 map.add(auto);
                 jpDown.get(i).add(auto);
             }
@@ -128,6 +130,7 @@ public class Win extends JFrame implements ActionListener {
             // 初始化完毕重启游戏
             MapsetVisible(true);
             startGame = true;
+            this.requestFocus();
         }
     }
 

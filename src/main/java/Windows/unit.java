@@ -9,11 +9,14 @@ public class unit {
     public int atk;
     // 名字
     public String name;
+    // 可见性
+    public boolean visible;
 
-    public unit(int type, int hp, int atk, String name) {
+    public unit(int type, int hp, int atk, String name, boolean visible) {
         this.type = type;
         this.hp = hp;
         this.atk = atk;
         this.name = name;
+        this.visible = visible;
     }
 }
