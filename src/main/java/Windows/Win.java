@@ -1,11 +1,14 @@
 package Windows;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+
+import static java.awt.font.TextAttribute.FONT;
 
 public class Win extends JFrame implements ActionListener {
 
@@ -14,8 +17,11 @@ public class Win extends JFrame implements ActionListener {
     private JButton small,out;     // 最小化最大化按钮
     public JPanel map;            // 地图位置范围
     private JButton btn;           // 开始游戏
+    public JLabel jLabelHp, jLabelAtk, jLabelName;
+    public JLabel jLabelHpValue, jLabelAtkValue, jLabelNameValue;
     public String direction = "中";
     public boolean startGame = false; // 按开始游戏之后变成true
+    public AutoBGJpanel battleGround, winUI, defeatUI, p1UI, p2UI; // 战场, 胜利图标, 失败图标
 
     public ArrayList<ArrayList<AutoBGJpanel>> jpUp = new ArrayList<>();         // 战争迷雾2d
     public ArrayList<ArrayList<AutoBGJpanel>> jpDown = new ArrayList<>();       // 生物物品2d
@@ -33,24 +39,16 @@ public class Win extends JFrame implements ActionListener {
         // rootPanel为根容器 绝对布局
         rootPanel = new BGJPanel();
         rootPanel.setLayout(null);
-        // 可拖拽顶栏
-        jpTop = new MVJPanel();
-        jpTop.setDragable(this);
-        jpTop.setBounds(0,0,1000,100);
-        jpTop.setOpaque(false);
-        jpTop.setLayout(null);
-        // 最小化按钮
-        small = new JButton(new ImageIcon(new FilePath().filePath("small.png")));
-        small.setBounds(955,2,20,20);
-        small.addActionListener(this);
-        // 最大化按钮
-        out   = new JButton(new ImageIcon(new FilePath().filePath("out.png")));
-        out  .setBounds(978,2,20,20);
-        out  .addActionListener(this);
+        // 初始化个性化窗口
+        initWindowsSelfStyle();
+        // 初始化主人公信息显示面板
+        this.initPlayerValueShowSystem();
         // 地图区域 6x6 每格70像素x70像素
         map = new JPanel();
         map.setBounds(480,130,420,420);
         map.setLayout(null);
+        // 战场UI
+        this.initBattleGroundGUI();
         // 按钮
         btn = new JButton("开始游戏");
         btn.setBounds(100,130,120,30);
@@ -86,8 +84,78 @@ public class Win extends JFrame implements ActionListener {
         rootPanel.add(jpTop);
         rootPanel.add(map);
         rootPanel.add(btn);
+        rootPanel.add(jLabelName);
+        rootPanel.add(jLabelHp);
+        rootPanel.add(jLabelAtk);
+        rootPanel.add(jLabelNameValue);
+        rootPanel.add(jLabelHpValue);
+        rootPanel.add(jLabelAtkValue);
+        rootPanel.add(battleGround, 0);
         jpTop.add(small);
         jpTop.add(out);
+        battleGround.add(winUI);
+        battleGround.add(defeatUI);
+        battleGround.add(p1UI);
+        battleGround.add(p2UI);
+    }
+
+    private void initBattleGroundGUI() {
+        battleGround = new AutoBGJpanel("战场.png");
+        battleGround.setBounds(490, 160,400, 300);
+        battleGround.setLayout(null);
+        battleGround.setVisible(false);
+
+        winUI = new AutoBGJpanel("战斗胜利.png");
+        winUI.setBounds(100,100,200,100);
+        winUI.setVisible(false);
+
+        defeatUI = new AutoBGJpanel("战斗失败.png");
+        defeatUI.setBounds(100,100,200,100);
+        defeatUI.setVisible(false);
+
+        p1UI = new AutoBGJpanel("0云.png");
+        p1UI.setBounds(10,120,70,70);
+
+        p2UI = new AutoBGJpanel("0云.png");
+        p2UI.setBounds(320,120,70,70);
+    }
+
+    private void initPlayerValueShowSystem() {
+        jLabelName = new JLabel("人物");
+        jLabelName.setBounds(920, 60, 100, 100);
+        jLabelName.setFont(new java.awt.Font("黑体", 1, 20));
+        jLabelHp = new JLabel("血量");
+        jLabelHp.setBounds(920, 120, 100, 100);
+        jLabelHp.setFont(new java.awt.Font("黑体", 1, 20));
+        jLabelAtk = new JLabel("攻击");
+        jLabelAtk.setBounds(920, 180, 100, 100);
+        jLabelAtk.setFont(new java.awt.Font("黑体", 1, 20));
+        jLabelNameValue = new JLabel("nameNULL");
+        jLabelNameValue.setBounds(940, 90, 100, 100);
+        jLabelNameValue.setFont(new java.awt.Font("黑体", 1, 22));
+        jLabelHpValue = new JLabel("hpNULL");
+        jLabelHpValue.setBounds(940, 150, 100, 100);
+        jLabelHpValue.setFont(new java.awt.Font("黑体", 1, 22));
+        jLabelAtkValue = new JLabel("atkNULL");
+        jLabelAtkValue.setBounds(940, 210, 100, 100);
+        jLabelAtkValue.setFont(new java.awt.Font("黑体", 1, 22));
+    }
+
+    private void initWindowsSelfStyle() {
+        // 可拖拽顶栏
+        jpTop = new MVJPanel();
+        jpTop.setDragable(this);
+        jpTop.setBounds(0,0,1000,100);
+        jpTop.setOpaque(false);
+        jpTop.setLayout(null);
+        // 最小化按钮
+        small = new JButton(new ImageIcon(new FilePath().filePath("small.png")));
+        small.setBounds(955,2,20,20);
+        small.addActionListener(this);
+        // 最大化按钮
+        out   = new JButton(new ImageIcon(new FilePath().filePath("out.png")));
+        out  .setBounds(978,2,20,20);
+        out  .addActionListener(this);
     }
 
     public void drawUp(ArrayList<ArrayList<unit>> unitUp) {
