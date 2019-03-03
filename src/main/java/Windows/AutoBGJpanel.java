@@ -15,4 +15,11 @@ public class AutoBGJpanel extends JPanel {
         //下面这行是为了背景图片可以跟随窗口自行调整大小，可以自己设置成固定大小
         g.drawImage(img, 0, 0,this.getWidth(), this.getHeight(), this);
     }
+    public void paintComponentSelfChoosePic(String tempstr) {
+        ImageIcon icon1;
+        Image img1;
+        icon1 = new ImageIcon(new FilePath().filePath(tempstr));
+        img1=icon1.getImage();
+        img = img1;
+    }
 }

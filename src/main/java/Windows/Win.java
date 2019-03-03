@@ -16,12 +16,15 @@ public class Win extends JFrame implements ActionListener {
     private MVJPanel jpTop;        // 拖动标题栏
     private JButton small,out;     // 最小化最大化按钮
     public JPanel map;            // 地图位置范围
-    private JButton btn;           // 开始游戏
+    public JButton btn;           // 开始游戏
     public JLabel jLabelHp, jLabelAtk, jLabelName;
     public JLabel jLabelHpValue, jLabelAtkValue, jLabelNameValue;
     public String direction = "中";
     public boolean startGame = false; // 按开始游戏之后变成true
     public AutoBGJpanel battleGround, winUI, defeatUI, p1UI, p2UI; // 战场, 胜利图标, 失败图标
+    public AutoBGJpanel exitDoorJPanel; // 出口贴图
+    public AutoBGJpanel gamePassJPanel; // 通关贴图
+    public boolean exitDoorJPanelVisible = false; // 默认为false击败boss后改为true
 
     public ArrayList<ArrayList<AutoBGJpanel>> jpUp = new ArrayList<>();         // 战争迷雾2d
     public ArrayList<ArrayList<AutoBGJpanel>> jpDown = new ArrayList<>();       // 生物物品2d
@@ -47,8 +50,17 @@ public class Win extends JFrame implements ActionListener {
         map = new JPanel();
         map.setBounds(480,130,420,420);
         map.setLayout(null);
+        map.setBackground(Color.white);
         // 战场UI
         this.initBattleGroundGUI();
+        // 出口
+        exitDoorJPanel = new AutoBGJpanel("出口.png");
+        exitDoorJPanel.setBounds(480,130,70,70);
+        exitDoorJPanel.setVisible(false);
+        // 通关
+        gamePassJPanel = new AutoBGJpanel("通关.png");
+        gamePassJPanel.setBounds(400,90,600,550);
+        gamePassJPanel.setVisible(false);
         // 按钮
         btn = new JButton("开始游戏");
         btn.setBounds(100,130,120,30);
@@ -82,6 +94,8 @@ public class Win extends JFrame implements ActionListener {
         // 面板组合
         this.add(rootPanel);
         rootPanel.add(jpTop);
+        rootPanel.add(gamePassJPanel);
+        rootPanel.add(battleGround);
         rootPanel.add(map);
         rootPanel.add(btn);
         rootPanel.add(jLabelName);
@@ -90,7 +104,7 @@ public class Win extends JFrame implements ActionListener {
         rootPanel.add(jLabelNameValue);
         rootPanel.add(jLabelHpValue);
         rootPanel.add(jLabelAtkValue);
-        rootPanel.add(battleGround, 0);
+        rootPanel.add(exitDoorJPanel);
         jpTop.add(small);
         jpTop.add(out);
         battleGround.add(winUI);
@@ -187,6 +201,7 @@ public class Win extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == small){
             this.setExtendedState(ICONIFIED);
+            this.requestFocus();
         }
         if(e.getSource() == out  ){
             System.exit(0);
@@ -200,6 +215,12 @@ public class Win extends JFrame implements ActionListener {
             startGame = true;
             this.requestFocus();
         }
+    }
+
+    public void setLocationExitDoorJPanel(int x, int y){
+        // 480 , 130
+        exitDoorJPanel.setLocation(exitDoorJPanel.getX() + x * 70, exitDoorJPanel.getY() + y * 70);
+        exitDoorJPanel.updateUI();
     }
 
     public void MapsetVisible(boolean b){
