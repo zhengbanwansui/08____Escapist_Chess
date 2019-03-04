@@ -1,5 +1,6 @@
 package Game;
 
+import Mysql.JDBC;
 import Windows.Win;
 import Windows.unit;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 
 public class MapBuilder {
 
+    // 生成迷雾0
     public void buildUp(ArrayList<ArrayList<unit>> unitUp) {
         for(int i=0; i<6; i++){
             unitUp.add(new ArrayList<unit>());
@@ -15,39 +17,140 @@ public class MapBuilder {
             }
         }
     }
-
+    // 生成下层地图12345
     public void buildDown(ArrayList<ArrayList<unit>> unitDown) {
-        for(int i=0; i<2; i++){
+
+        for(int i=0; i<6; i++){
             unitDown.add(new ArrayList<unit>());
             for(int j=0; j<6; j++){
-                unitDown.get(i).add(new unit(1, 10, 50, "1狗.png", true) );
+                unitDown.get(i).add(new unit(1, 10, 10, "1球.png", true) );
             }
         }
-        for(int i=2; i<3; i++){
-            unitDown.add(new ArrayList<unit>());
-            for(int j=0; j<6; j++){
-                unitDown.get(i).add(new unit(1, 10, 10, "1兔子.png", true) );
+//##############################随机生成地图##################################################################
+    int[] a;
+    int num;
+    num = 0;
+    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    for(int i=0; i<3;i++){
+        for(int j=0; j<3; j++){
+            switch(a[num]){
+                case 1:
+                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
+                    unitDown.get(i).get(j).type = 1;
+                    break;
+                case 3:
+                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
+                    unitDown.get(i).get(j).type = 3;
+                    break;
+                case 5:
+                    unitDown.get(i).get(j).type = 5;
+                    unitDown.get(i).get(j).visible = false;
+                    break;
             }
+            num++;
         }
-        for(int i=3; i<4; i++){
-            unitDown.add(new ArrayList<unit>());
-            for(int j=0; j<6; j++){
-                unitDown.get(i).add(new unit(1, 10, 50, "1球.png", true) );
+    }
+
+    num = 0;
+    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    for(int i=3; i<6;i++){
+        for(int j=0; j<3; j++){
+            switch(a[num]){
+                case 1:
+                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
+                    unitDown.get(i).get(j).type = 1;
+                    break;
+                case 3:
+                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
+                    unitDown.get(i).get(j).type = 3;
+                    break;
+                case 5:
+                    unitDown.get(i).get(j).type = 5;
+                    unitDown.get(i).get(j).visible = false;
+                    break;
             }
+            num++;
         }
-        for(int i=4; i<6; i++){
-            unitDown.add(new ArrayList<unit>());
-            for(int j=0; j<6; j++){
-                unitDown.get(i).add(new unit(3, 10, 10, "3香蕉.png", true) );
+    }
+
+    num = 0;
+    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    for(int i=0; i<3;i++){
+        for(int j=3; j<6; j++){
+            switch(a[num]){
+                case 1:
+                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
+                    unitDown.get(i).get(j).type = 1;
+                    break;
+                case 3:
+                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
+                    unitDown.get(i).get(j).type = 3;
+                    break;
+                case 5:
+                    unitDown.get(i).get(j).type = 5;
+                    unitDown.get(i).get(j).visible = false;
+                    break;
             }
+            num++;
         }
+    }
+
+    num = 0;
+    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    for(int i=3; i<6;i++){
+        for(int j=3; j<6; j++){
+            switch(a[num]){
+                case 1:
+                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
+                    unitDown.get(i).get(j).type = 1;
+                    break;
+                case 3:
+                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
+                    unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
+                    unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
+                    unitDown.get(i).get(j).type = 3;
+                    break;
+                case 5:
+                    unitDown.get(i).get(j).type = 5;
+                    unitDown.get(i).get(j).visible = false;
+                    break;
+            }
+            num++;
+        }
+    }
+
+
+//##############################随机生成地图##################################################################
     }
 
     public unit buildPlayer(ArrayList<ArrayList<unit>> unitDown, int playerX, int playerY){
 
-        unitDown.get(playerX).get(playerY).name = "2路飞.png";
-        unitDown.get(playerX).get(playerY).atk = 500;
-        unitDown.get(playerX).get(playerY).hp = 1000;
+        String3 S3 = JDBC.queryTab1234("player", RandNum.randNum(1,JDBC.queryTabRowNum("player")));
+        unitDown.get(playerX).get(playerY).name = "2" + S3.str1 + ".png";
+        unitDown.get(playerX).get(playerY).hp = Integer.valueOf(S3.str2);
+        unitDown.get(playerX).get(playerY).atk = Integer.valueOf(S3.str3);
         unitDown.get(playerX).get(playerY).type = 2;
         unitDown.get(playerX).get(playerY).visible = true;
         return unitDown.get(playerX).get(playerY);
@@ -55,9 +158,11 @@ public class MapBuilder {
     }
 
     public unit buildBoss (ArrayList<ArrayList<unit>> unitDown, int bossX, int bossY) {
-        unitDown.get(bossX).get(bossY).name = "4恐龙小子.png";
-        unitDown.get(bossX).get(bossY).atk = 30;
-        unitDown.get(bossX).get(bossY).hp = 100;
+
+        String3 S3 = JDBC.queryTab1234("boss", RandNum.randNum(1,JDBC.queryTabRowNum("boss")));
+        unitDown.get(bossX).get(bossY).name = "4" + S3.str1 + ".png";
+        unitDown.get(bossX).get(bossY).hp = Integer.valueOf(S3.str2);
+        unitDown.get(bossX).get(bossY).atk = Integer.valueOf(S3.str3);
         unitDown.get(bossX).get(bossY).type = 4;
         unitDown.get(bossX).get(bossY).visible = true;
         return unitDown.get(bossX).get(bossY);
