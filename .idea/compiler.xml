@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Escapist_Chess" />
-        <module name="逃生棋" />
       </profile>
     </annotationProcessing>
   </component>

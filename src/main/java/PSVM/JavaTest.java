@@ -8,6 +8,8 @@ import Windows.Win;
 import Windows.unit;
 import java.util.ArrayList;
 
+import static Game.MapBuilder.playerId;
+
 public class JavaTest {
 
     public static void main(String[] args) {
@@ -174,7 +176,7 @@ public class JavaTest {
                     unitDown.get(targetX).get(targetY).name);
 
                     // 开始战斗
-                    boolean bol = BG.fight(win, playerUnit, unitDown.get(targetX).get(targetY), targetX, targetY, unitDown);
+                    boolean bol = BG.fight(win, playerUnit, unitDown.get(targetX).get(targetY), targetX, targetY, unitDown,playerId);
 
                     // 击败boss显示出口
                     if (bol && unitDown.get(targetX).get(targetY).type == 4) {

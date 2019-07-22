@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class MapBuilder {
 
+    public static int playerId;
+
     // 生成迷雾0
     public void buildUp(ArrayList<ArrayList<unit>> unitUp) {
         for(int i=0; i<6; i++){
@@ -147,7 +149,8 @@ public class MapBuilder {
 
     public unit buildPlayer(ArrayList<ArrayList<unit>> unitDown, int playerX, int playerY){
 
-        String3 S3 = JDBC.queryTab1234("player", RandNum.randNum(1,JDBC.queryTabRowNum("player")));
+        playerId = RandNum.randNum(1,JDBC.queryTabRowNum("player"));
+        String3 S3 = JDBC.queryTab1234("player", playerId);
         unitDown.get(playerX).get(playerY).name = "2" + S3.str1 + ".png";
         unitDown.get(playerX).get(playerY).hp = Integer.valueOf(S3.str2);
         unitDown.get(playerX).get(playerY).atk = Integer.valueOf(S3.str3);

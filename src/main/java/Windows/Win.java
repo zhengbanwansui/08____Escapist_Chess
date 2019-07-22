@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-
 import static java.awt.font.TextAttribute.FONT;
 
 public class Win extends JFrame implements ActionListener {
@@ -177,7 +176,7 @@ public class Win extends JFrame implements ActionListener {
             jpUp.add(new ArrayList<AutoBGJpanel>());
             for(int j=0; j<6; j++){
                 AutoBGJpanel auto = new AutoBGJpanel(unitUp.get(i).get(j).name);
-                auto.setBounds(i*70, j*70, 60, 60);
+                auto.setBounds(5 + i * 70, 5 + j * 70, 60, 60);
                 auto.setVisible(unitUp.get(i).get(j).visible);
                 map.add(auto);
                 jpUp.get(i).add(auto);
@@ -190,7 +189,7 @@ public class Win extends JFrame implements ActionListener {
             jpDown.add(new ArrayList<AutoBGJpanel>());
             for(int j=0; j<6; j++){
                 AutoBGJpanel auto = new AutoBGJpanel(unitDown.get(i).get(j).name);
-                auto.setBounds(10+i*70, 10+j*70, 60, 60);
+                auto.setBounds(5 + i * 70, 5 + j * 70, 60, 60);
                 auto.setVisible(unitDown.get(i).get(j).visible);
                 map.add(auto);
                 jpDown.get(i).add(auto);

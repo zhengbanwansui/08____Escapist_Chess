@@ -6,6 +6,27 @@ import java.sql.*;
 
 public class JDBC {
 
+    // 存储fight的数据
+    public static void updateFightTab(int playerId, int winOrNot){
+        try {
+            System.out.println("存储fight的数据" + playerId + " " + winOrNot);
+            // 加载驱动
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            // 建立连接
+            String url = "jdbc:mysql://localhost:3306/EscapistChess?useSSL=false&serverTimezone=GMT%2B8&amp";
+            Connection conn = DriverManager.getConnection(url,"root","");
+            //"select * from tab1 where name=?";
+            PreparedStatement pstmt = conn.prepareStatement("insert into fight(player,result) values(?,?)");
+            pstmt.setInt( 1,playerId);
+            pstmt.setInt( 2,winOrNot);
+            pstmt.executeUpdate();
+            pstmt.close();
+            conn.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     // 查找每个表的数据一共多少条
     public static int queryTabRowNum(String tabName){
         int a = 0;
