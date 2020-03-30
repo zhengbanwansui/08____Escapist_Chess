@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a4f8355-6c07-4347-907d-a01289e29e20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/BattleGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/BattleGround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/MapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/MapBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mysql/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mysql/MyJdbc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PSVM/JavaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PSVM/JavaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Mysql/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Mysql/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Mysql/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Mysql/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/游戏规则.txt" beforeDir="false" afterPath="$PROJECT_DIR$/游戏规则.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Mysql/test.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,16 +19,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Mysql/MyJdbc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="5">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#224#243#0" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-81" />
           </provider>
         </entry>
       </file>
@@ -105,33 +103,14 @@
               <item name="Escapist_Chess" type="b2602c69:ProjectViewProjectNode" />
               <item name="08____Escapist_Chess" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Escapist_Chess" type="b2602c69:ProjectViewProjectNode" />
               <item name="08____Escapist_Chess" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Mysql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Escapist_Chess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="08____Escapist_Chess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="PSVM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Escapist_Chess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="08____Escapist_Chess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Windows" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -201,16 +180,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585556039389</updated>
-      <workItem from="1585556040669" duration="5438000" />
+      <workItem from="1585556040669" duration="6627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5438000" />
+    <option name="totallyTimeSpent" value="6627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1058" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="UI Designer" />
@@ -219,9 +197,9 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.47472528" />
       <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.34175825" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Statistic" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,6 +222,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Game/MapBuilder.java">
@@ -298,13 +302,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Mysql/MyJdbc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="5">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#224#243#0" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Mysql/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81" />
       </provider>
     </entry>
   </component>
