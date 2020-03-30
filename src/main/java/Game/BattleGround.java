@@ -1,6 +1,6 @@
 package Game;
 
-import Mysql.JDBC;
+import Mysql.MyJdbc;
 import Windows.AutoBGJpanel;
 import Windows.Win;
 import Windows.unit;
@@ -121,7 +121,7 @@ public class BattleGround {
             win.battleGround.setVisible(false);
             playerUnit.hp = 9 * playerUnit.hp / 10;
             System.out.println("|||||||||-----结束fight-----|||||||||");
-            JDBC.updateFightTab(playerId,0);
+            //MyJdbc.updateFightTab(playerId,0);
             return false;
         }
         else{
@@ -136,7 +136,7 @@ public class BattleGround {
             // 主角血量变少
             playerUnit.hp = hp1;
             System.out.println("|||||||||-----结束fight-----|||||||||");
-            JDBC.updateFightTab(playerId,1);
+            //MyJdbc.updateFightTab(playerId,1);
             return true;
         }
     }

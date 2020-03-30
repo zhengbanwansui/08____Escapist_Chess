@@ -81,7 +81,9 @@ public class JavaTest {
         int targetX = 99999;
         int targetY = 99999;
 
-        while(! win.startGame){ try{System.out.println("没开始游戏等待中");Thread.sleep(100);}catch(Exception e){e.getStackTrace();} }
+        System.out.println("初始化完成 准备开始游戏");
+
+        while(! win.startGame){ try{Thread.sleep(100);}catch(Exception e){e.getStackTrace();} }
         // 按键归位
         win.direction = "中";
         // 人物属性面板初始化

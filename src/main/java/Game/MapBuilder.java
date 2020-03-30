@@ -1,7 +1,6 @@
 package Game;
 
-import Mysql.JDBC;
-import Windows.Win;
+import Mysql.MyJdbc;
 import Windows.unit;
 
 import java.util.ArrayList;
@@ -32,19 +31,19 @@ public class MapBuilder {
     int[] a;
     int num;
     num = 0;
-    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    a = MyJdbc.queryTabMap(RandNum.randNum(1, MyJdbc.queryTabRowNum("map")));
     for(int i=0; i<3;i++){
         for(int j=0; j<3; j++){
             switch(a[num]){
                 case 1:
-                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    String3 S3 = MyJdbc.queryTab1234("monster", RandNum.randNum(1, MyJdbc.queryTabRowNum("monster")));
                     unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
                     unitDown.get(i).get(j).type = 1;
                     break;
                 case 3:
-                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    String3 S4 = MyJdbc.queryTab1234("item", RandNum.randNum(1, MyJdbc.queryTabRowNum("item")));
                     unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
@@ -60,19 +59,19 @@ public class MapBuilder {
     }
 
     num = 0;
-    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    a = MyJdbc.queryTabMap(RandNum.randNum(1, MyJdbc.queryTabRowNum("map")));
     for(int i=3; i<6;i++){
         for(int j=0; j<3; j++){
             switch(a[num]){
                 case 1:
-                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    String3 S3 = MyJdbc.queryTab1234("monster", RandNum.randNum(1, MyJdbc.queryTabRowNum("monster")));
                     unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
                     unitDown.get(i).get(j).type = 1;
                     break;
                 case 3:
-                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    String3 S4 = MyJdbc.queryTab1234("item", RandNum.randNum(1, MyJdbc.queryTabRowNum("item")));
                     unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
@@ -88,19 +87,19 @@ public class MapBuilder {
     }
 
     num = 0;
-    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    a = MyJdbc.queryTabMap(RandNum.randNum(1, MyJdbc.queryTabRowNum("map")));
     for(int i=0; i<3;i++){
         for(int j=3; j<6; j++){
             switch(a[num]){
                 case 1:
-                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    String3 S3 = MyJdbc.queryTab1234("monster", RandNum.randNum(1, MyJdbc.queryTabRowNum("monster")));
                     unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
                     unitDown.get(i).get(j).type = 1;
                     break;
                 case 3:
-                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    String3 S4 = MyJdbc.queryTab1234("item", RandNum.randNum(1, MyJdbc.queryTabRowNum("item")));
                     unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
@@ -116,19 +115,19 @@ public class MapBuilder {
     }
 
     num = 0;
-    a = JDBC.queryTabMap(RandNum.randNum(1,JDBC.queryTabRowNum("map")));
+    a = MyJdbc.queryTabMap(RandNum.randNum(1, MyJdbc.queryTabRowNum("map")));
     for(int i=3; i<6;i++){
         for(int j=3; j<6; j++){
             switch(a[num]){
                 case 1:
-                    String3 S3 = JDBC.queryTab1234("monster", RandNum.randNum(1,JDBC.queryTabRowNum("monster")));
+                    String3 S3 = MyJdbc.queryTab1234("monster", RandNum.randNum(1, MyJdbc.queryTabRowNum("monster")));
                     unitDown.get(i).get(j).name = "1" + S3.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S3.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S3.str3);
                     unitDown.get(i).get(j).type = 1;
                     break;
                 case 3:
-                    String3 S4 = JDBC.queryTab1234("item", RandNum.randNum(1,JDBC.queryTabRowNum("item")));
+                    String3 S4 = MyJdbc.queryTab1234("item", RandNum.randNum(1, MyJdbc.queryTabRowNum("item")));
                     unitDown.get(i).get(j).name = "3" + S4.str1 + ".png";
                     unitDown.get(i).get(j).hp = Integer.valueOf(S4.str2);
                     unitDown.get(i).get(j).atk = Integer.valueOf(S4.str3);
@@ -149,8 +148,8 @@ public class MapBuilder {
 
     public unit buildPlayer(ArrayList<ArrayList<unit>> unitDown, int playerX, int playerY){
 
-        playerId = RandNum.randNum(1,JDBC.queryTabRowNum("player"));
-        String3 S3 = JDBC.queryTab1234("player", playerId);
+        playerId = RandNum.randNum(1, MyJdbc.queryTabRowNum("player"));
+        String3 S3 = MyJdbc.queryTab1234("player", playerId);
         unitDown.get(playerX).get(playerY).name = "2" + S3.str1 + ".png";
         unitDown.get(playerX).get(playerY).hp = Integer.valueOf(S3.str2);
         unitDown.get(playerX).get(playerY).atk = Integer.valueOf(S3.str3);
@@ -162,7 +161,7 @@ public class MapBuilder {
 
     public unit buildBoss (ArrayList<ArrayList<unit>> unitDown, int bossX, int bossY) {
 
-        String3 S3 = JDBC.queryTab1234("boss", RandNum.randNum(1,JDBC.queryTabRowNum("boss")));
+        String3 S3 = MyJdbc.queryTab1234("boss", RandNum.randNum(1, MyJdbc.queryTabRowNum("boss")));
         unitDown.get(bossX).get(bossY).name = "4" + S3.str1 + ".png";
         unitDown.get(bossX).get(bossY).hp = Integer.valueOf(S3.str2);
         unitDown.get(bossX).get(bossY).atk = Integer.valueOf(S3.str3);
